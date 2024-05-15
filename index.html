@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Whiskers - Innovación en Desarrollo Ágil</title>
+    <!-- Incluir Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            overflow-x: hidden;
+        }
+        nav {
+            background-color: #0e0d0d;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            margin: 0 1em;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        .hero {
+            background-image: url('portada.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            margin-top: 0.5em;
+        }
+        .hero h1 {
+            font-size: 4em;
+            margin: 0;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5em 1em;
+        }
+        section {
+            padding: 2em;
+            background-color: #ffffff;
+            transition: background-color 0.5s ease-in-out;
+            margin-top: 4em; /* Ajusta el espacio para el navbar fijo */
+        }
+        section:nth-of-type(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .services, .values {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .card {
+            width: 300px;
+            height: 400px; /* Ajustado para acomodar las imágenes y el texto */
+            perspective: 1000px;
+            margin: 1em;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.6s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #fff;
+            padding: 1em;
+            box-sizing: border-box;
+        }
+        .card-front {
+            background-color: #3b5998;
+            transform: rotateY(0deg);
+        }
+        .card-back {
+            background-color: #1da1f2;
+            transform: rotateY(180deg);
+        }
+        .card-front img, .card-back img {
+            width: 100%;
+            height: 200px; /* Ajustado para que las imágenes se vean bien */
+            object-fit: cover; /* Asegura que la imagen cubra todo el área sin distorsión */
+            border-bottom: 2px solid #fff;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1em;
+            padding: 1em;
+        }
+        .tool {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 1em;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .tool:hover {
+            transform: scale(1.05);
+            background-color: #e0e0e0;
+        }
+        .tool i {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#valores">Valores Principales</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#herramientas">Herramientas y Tecnologías</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    <section class="hero">
+        <div>
+            <h1>Bienvenidos a Agile Whiskers</h1>
+            <p>Innovación y Transformación Digital</p>
+        </div>
+    </section>
+    <section id="valores">
+        <h2>Valores Principales</h2>
+        <div class="values">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="valores1.jpg" alt="Desarrollo Ágil">
+                        <p>Desarrollo Ágil</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Nos adaptamos rápidamente a los cambios para entregar valor continuo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="valores2.jpg" alt="Transformación Digital">
+                        <p>Transformación Digital</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Acompañamos a las empresas en su viaje hacia la digitalización completa.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="valores3.jpg" alt="Vanguardia">
+                        <p>Vanguardia</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Aplicamos herramientas y prácticas de última generación.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="valores4.jpg" alt="Talento Único">
+                        <p>Talento Único</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Nos especializamos en encontrar y desarrollar talentos excepcionales.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="valores5.jpg" alt="Enfoque en el Negocio">
+                        <p>Enfoque en el Negocio</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Prioridad a lo que quiere el negocio, estamos por y para el negocio.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="valores6.jpg" alt="Fuerte Enfoque Cloud">
+                        <p>Fuerte Enfoque Cloud</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Especialistas en soluciones cloud para una infraestructura flexible y escalable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <div class="services">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="servicios1.jpg" alt="Consultoría en Transformación Digital">
+                        <p>Consultoría en Transformación Digital</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Apoyo integral en los procesos de transformación digital de su empresa.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="servicios2.jpg" alt="Desarrollo de Software a Pedido">
+                        <p>Desarrollo de Software a Pedido</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Creación de soluciones de software personalizadas para sus necesidades específicas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="servicios3.jpg" alt="Soluciones Cloud y Migración a la Nube">
+                        <p>Soluciones Cloud y Migración a la Nube</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Implementación y migración de aplicaciones a entornos cloud.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="servicios4.jpg" alt="Soporte y Mantenimiento de Aplicaciones">
+                        <p>Soporte y Mantenimiento de Aplicaciones</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Servicios de soporte y mantenimiento para asegurar la continuidad operativa.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="servicios5.jpg" alt="Reversión de Infraestructura Cloud a On-Premise">
+                        <p>Reversión de Infraestructura Cloud a On-Premise</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Servicios para la transición de soluciones cloud a infraestructuras locales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="herramientas">
+        <h2>Herramientas y Tecnologías</h2>
+        <div class="tools-grid">
+            <div class="tool">
+                <i class="fab fa-python"></i>
+                <p>Python</p>
+            </div>
+            <div class="tool">
+                <i class="fab fa-python"></i>
+                <p>Django</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-rocket"></i>
+                <p>FastAPI</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-database"></i>
+                <p>MongoDB</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-database"></i>
+                <p>PostgreSQL</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-database"></i>
+                <p>Oracle</p>
+            </div>
+            <div class="tool">
+                <i class="fab fa-react"></i>
+                <p>NextJS</p>
+            </div>
+            <div class="tool">
+                <i class="fab fa-react"></i>
+                <p>ReactJS</p>
+            </div>
+            <div class="tool">
+                <i class="fab fa-vuejs"></i>
+                <p>VueJS</p>
+            </div>
+            <div class="tool">
+                <i class="fab fa-angular"></i>
+                <p>Angular</p>
+            </div>
+            <div class="tool">
+                <i class="fab fa-aws"></i>
+                <p>Amazon Web Services</p>
+            </div>
+            <div class="tool">
+                <i class="fab fa-google"></i>
+                <p>Google Cloud</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-tools"></i>
+                <p>Jenkins</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-code-branch"></i>
+                <p>GitLab CI</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-shield-alt"></i>
+                <p>Sonar</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-shield-alt"></i>
+                <p>Fortify</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-shield-alt"></i>
+                <p>Contrast Security</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Para más información, contáctanos a través de nuestro correo: <a href="mailto:contacto@agilewhiskers.com">contacto@agilewhiskers.com</a></p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Agile Whiskers. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
